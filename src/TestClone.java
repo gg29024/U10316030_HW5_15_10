@@ -1,4 +1,6 @@
-
+//U10316030
+//楊子育
+//15.10
 
 import java.util.ArrayList;
 
@@ -6,11 +8,12 @@ import java.util.ArrayList;
 public class TestClone implements Cloneable{
 	//Main method
 	public static void main(String[] args) throws CloneNotSupportedException{
-			
+		//new an object
 		MyStack oobject = new MyStack();
 		MyStack ooobject = (MyStack)oobject.clone();
-		System.out.println(oobject == ooobject);
-		System.out.println(oobject.list == ooobject.list);
+		//看位置是否一樣 不一樣就是false 代表有拷貝到
+		System.out.println(oobject == ooobject);  //淺層
+		System.out.println(oobject.list == ooobject.list);  //深層
 		
 
 	}
