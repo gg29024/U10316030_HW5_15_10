@@ -51,7 +51,9 @@ class MyStack implements Cloneable{
 	
 	@Override
 	public Object clone() throws CloneNotSupportedException{
+		//Shallow Copy
 		MyStack object2 = (MyStack)super.clone();
+		//Deep Copy
 		object2.list = (ArrayList<Object>)list.clone();
 		return object2;
 	}
