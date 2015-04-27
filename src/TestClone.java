@@ -3,10 +3,15 @@
 import java.util.ArrayList;
 
 
-public class TestCloneimplements Cloneable{
+public class TestClone implements Cloneable{
 	//Main method
-	public static void main(String[] args){
+	public static void main(String[] args) throws CloneNotSupportedException{
 			
+		MyStack oobject = new MyStack();
+		MyStack ooobject = (MyStack)oobject.clone();
+		System.out.println(oobject == ooobject);
+		System.out.println(oobject.list == ooobject.list);
+		
 
 	}
 }
