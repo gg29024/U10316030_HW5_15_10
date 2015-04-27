@@ -1,9 +1,9 @@
 
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class TestClone{
+
+public class TestCloneimplements Cloneable{
 	//Main method
 	public static void main(String[] args){
 			
@@ -12,35 +12,43 @@ public class TestClone{
 }
 
 
-class MyStack{
+class MyStack implements Cloneable{
 	
 	public ArrayList<Object> list = new ArrayList<Object>();
 	
 	
 	public boolean isEmpty(){
-		return super.isEmpty();
+		return list.isEmpty();
 	}
 	
 	public int getSize(){
-		return super.size();
+		return list.size();
 	}
 	
 	public Object peek(){
-		return super.get(getSize() - 1);
+		return list.get(getSize() - 1);
 	}
 	
 	public Object pop(){
-		Object o = super.get(getSize() - 1);
-		super.remove(getSize() - 1);
+		Object o = list.get(getSize() - 1);
+		list.remove(getSize() - 1);
 		return o;
 	}
 	
 	public void push(Object o){
-		super.add(o);
+		list.add(o);
 	}
 	
 	@Override
 	public String toString(){
-		return "stack: " + super.toString();
+		return "stack: " + list.toString();
 	}
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException{
+		MyStack object2 = (MyStack)super.clone();
+		object2.list = (ArrayList<Object>)list.clone();
+		return object2;
+	}
+	
 }
